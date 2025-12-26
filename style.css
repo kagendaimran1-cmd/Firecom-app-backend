@@ -1,0 +1,126 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #6a11cb, #8e2de2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SPLASH */
+#splash {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #6a11cb, #8e2de2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.splash-text {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  animation: splashZoom 3s ease forwards;
+}
+
+/* Zoom + fade splash */
+@keyframes splashZoom {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* LOGIN CARD */
+.login-card {
+  background: white;
+  width: 90%;
+  max-width: 380px;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  text-align: center;
+  animation: loginGrow 0.6s ease forwards;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes loginGrow {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.login-card h2 {
+  color: #6a11cb;
+}
+
+.login-card p {
+  font-size: 14px;
+  color: #666;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.password-box {
+  position: relative;
+}
+
+#togglePassword {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  cursor: pointer;
+}
+
+.remember {
+  display: flex;
+  gap: 6px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #6a11cb, #8e2de2);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.status {
+  font-size: 13px;
+  color: red;
+  margin-top: 10px;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Firecom Web2APK Builder</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- App styles -->
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+  <header>
+    <h1>Firecom Web2APK Builder</h1>
+    <p>Upload your web project ZIP and build an APK</p>
+  </header>
+
+  <main>
+    <div id="dropzone">
+      <p>📦 Drag & Drop ZIP here</p>
+      <button id="chooseBtn">Choose ZIP</button>
+    </div>
+
+    <form id="uploadForm">
+      <input type="file" id="fileInput" accept=".zip">
+    </form>
+
+    <div id="status"></div>
+  </main>
+
+  <!-- Socket.IO (only works if backend exists) -->
+  <script src="https://cdn.socket.io/4.7.2/socket.io.min.js"></script>
+
+  <!-- App logic -->
+  <script src="app.js"></script>
+</body>
+</html>

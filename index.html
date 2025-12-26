@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Firecom App Designer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Splash -->
+  <div id="splash">
+    <div class="splash-text">Firecom App Designer</div>
+  </div>
+
+  <!-- Login -->
+  <div class="login-card hidden" id="loginCard">
+    <h2>Login</h2>
+    <p>Login to Firecom App Designer</p>
+
+    <input type="email" id="email" placeholder="Email">
+
+    <div class="password-box">
+      <input type="password" id="password" placeholder="Password">
+      <span id="togglePassword">👁</span>
+    </div>
+
+    <div class="remember">
+      <input type="checkbox" id="remember">
+      <label for="remember">Remember me</label>
+    </div>
+
+    <button id="loginBtn">Sign In</button>
+    <p id="status" class="status"></p>
+  </div>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

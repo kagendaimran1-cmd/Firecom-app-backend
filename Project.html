@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project Settings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="project.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #6a11cb, #2575fc);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      margin: 10px 0;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .card label {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .card input {
+      padding: 8px;
+      border-radius: 5px;
+      border: none;
+      outline: none;
+      width: 100%;
+    }
+
+    button {
+      padding: 10px;
+      margin-top: 15px;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      background: #ffdd57;
+      color: #333;
+      font-weight: bold;
+    }
+
+    #iconPreview {
+      margin-top: 10px;
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 10px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Project Settings</h1>
+    <p>Configure your APK before building</p>
+  </header>
+
+  <main class="card">
+    <label>App Name</label>
+    <input type="text" id="appName" placeholder="Firecom App">
+
+    <label>Package Name</label>
+    <input type="text" id="packageName" placeholder="com.firecom.app">
+
+    <label>Version</label>
+    <input type="text" id="version" placeholder="1.0.0">
+
+    <label>Target Website / Project</label>
+    <input type="text" id="targetUrl" placeholder="index.html or https://example.com">
+
+    <label>App Icon</label>
+    <button type="button" onclick="iconInput.click()">Choose App Icon</button>
+    <input type="file" id="iconInput" accept="image/*" hidden>
+    <img id="iconPreview" alt="Icon preview">
+
+    <button onclick="saveProject()">Save & Continue</button>
+  </main>
+
+  <script>
+    // Show icon preview
+    const iconInput = document.getElementById("iconInput");
+    const iconPreview = document.getElementById("iconPreview");
+
+    iconInput.addEventListener("change", () => {
+      if (iconInput.files.length) {
+        const file = iconInput.files[0];
+        const reader = new FileReader();
+        reader.onload = () => {
+          iconPreview.src = reader.result;
+          iconPreview.style.display = "block";
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+  </script>
+
+  <script src="project.js"></script>
+</body>
+</html>
