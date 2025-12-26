@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+
+# Builds & temp
+builds/
+uploads/
+tmp/
+
+# Android / Gradle
+engine/
+.gradle/
+gradle-*
+gradlew
+local.properties
+
+# OS
+.DS_Store
